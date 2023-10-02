@@ -149,22 +149,22 @@ export default function Home() {
         </div>
       </div>
       <Buttons handleClickDisplay={handleClickDisplay} />
-      <div className="container-countries">
-        {state === "list" && filteredOptions !== null && (
-          <div className="container-countries-inside">
-            {filteredOptions.map((option, i) => {
-              return <NewCard option={option} i={i} key={i} />;
-            })}
-          </div>
-        )}
+      {filteredOptions !== null && (
+        <div className="container-countries">
+          {state === "list" && (
+            <div className="container-countries-inside">
+              {filteredOptions.map((option, i) => {
+                return <NewCard option={option} i={i} key={i} />;
+              })}
+            </div>
+          )}
 
-        {state === "carousel" && filteredOptions !== null && (
-          <Carousel filteredOptions={filteredOptions} />
-        )}
-        {state === "table" && filteredOptions !== null && (
-          <Table filteredOptions={filteredOptions} />
-        )}
-      </div>
+          {state === "carousel" && (
+            <Carousel filteredOptions={filteredOptions} />
+          )}
+          {state === "table" && <Table filteredOptions={filteredOptions} />}
+        </div>
+      )}
       <Footer />
     </>
   );

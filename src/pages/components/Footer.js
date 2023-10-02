@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <div className="container-footer">
-        <p className="text-footer">© Made by Céline</p>
+        <p className="text-footer">© Made by Céline -</p>
         <nav className="navFooter">
           <a
             target="_blank"
