@@ -1,4 +1,3 @@
-import Card from "./Card";
 import NewCard from ".//NewCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";

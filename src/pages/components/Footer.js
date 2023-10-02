@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function Footer() {
   return (
     <footer>
@@ -9,17 +11,17 @@ function Footer() {
             rel="noopener noreferrer"
             href="https://github.com/ocsiddisco/todo2023"
           >
-            <img src="github.png" alt="github" width="60px" height="60px" />
+            <Image src="/github.png" alt="github" width={60} height={60} />
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.linkedin.com/in/celinelecorvaisier/"
           >
-            <img src="linkedin.png" alt="linkedin" width="60px" height="60px" />
+            <Image src="/linkedin.png" alt="linkedin" width={60} height={60} />
           </a>
           <a href="mailto:celine.le.corv@gmail.com">
-            <img src="email.png" alt="email" width="60px" height="60px" />
+            <Image src="/email.png" alt="email" width={60} height={60} />
           </a>
         </nav>
       </div>

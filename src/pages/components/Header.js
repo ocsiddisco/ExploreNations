@@ -14,7 +14,7 @@ const Header = () => {
               d="M0 90 C40 10, 160 10, 200 90"
               fill="none"
               stroke="#f9dcd2"
-              stroke-width="4"
+              strokeWidth="4"
             />
           </svg>
 
@@ -29,7 +29,7 @@ const Header = () => {
               d="M0 10 C40 90, 160 90, 200 10"
               fill="none"
               stroke="#f9dcd2"
-              stroke-width="4"
+              strokeWidth="4"
             />
           </svg>
         </div>

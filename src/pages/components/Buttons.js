@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Buttons = ({ handleClickDisplay }) => {
   return (
     <>
@@ -5,13 +7,18 @@ const Buttons = ({ handleClickDisplay }) => {
         <p>Select a view</p>
         <span className="container-buttons-inside">
           <button onClick={() => handleClickDisplay("")}>
-            <img src="view.png" alt="view-card" />
+            <Image src="/view.png" alt="view-card" width={50} height={50} />
           </button>
           <button onClick={() => handleClickDisplay("carousel")}>
-            <img src="carousel.png" alt="view-carousel" />
+            <Image
+              src="/carousel.png"
+              alt="view-carousel"
+              width={50}
+              height={50}
+            />
           </button>
           <button onClick={() => handleClickDisplay("table")}>
-            <img src="table.png" alt="view-table" />
+            <Image src="/table.png" alt="view-table" width={50} height={50} />
           </button>
         </span>
       </div>
