@@ -7,6 +7,17 @@ export default function Table(props) {
 
   const { filteredOptions } = props;
 
+  const checkData = (data) => {
+    try {
+      const currencie = Object.values(data.currencies)[0].name;
+      const language = Object.values(data.languages)[0];
+      return { currencie, language };
+    } catch (err) {
+      console.log(err);
+      return {};
+    }
+  };
+
   const columns = [
     {
       field: "continent",
@@ -47,10 +58,6 @@ export default function Table(props) {
   ];
 
   useEffect(() => {
-    populateTable();
-  }, [filteredOptions]);
-
-  const populateTable = () => {
     const updatedRows = filteredOptions.map((data, index) => {
       const { language, currencie } = checkData(data);
       return {
@@ -65,23 +72,33 @@ export default function Table(props) {
     });
 
     setRows(updatedRows);
-  };
+  }, [filteredOptions, checkData]);
 
-  const checkData = (data) => {
-    try {
-      const currencie = Object.values(data.currencies)[0].name;
-      const language = Object.values(data.languages)[0];
-      return { currencie, language };
-    } catch (err) {
-      console.log(err);
-      return {};
-    }
-  };
+  // useEffect(() => {
+  //   populateTable();
+  // }, [filteredOptions]);
+
+  // const populateTable = () => {
+  //   const updatedRows = filteredOptions.map((data, index) => {
+  //     const { language, currencie } = checkData(data);
+  //     return {
+  //       id: index + 1,
+  //       continent: data.region,
+  //       country: data.name.common,
+  //       capital: data.capital,
+  //       population: data.population,
+  //       language: language,
+  //       currencie: currencie,
+  //     };
+  //   });
+
+  //   setRows(updatedRows);
+  // };
 
   return (
     <>
       <div className="container-table">
-        <Box sx={{ height: 400, width: "100%", boxShadow: 2 }}>
+        <Box sx={{ height: 400, width: "100%", m: 5, boxShadow: 2 }}>
           <DataGrid rows={rows} columns={columns} />
         </Box>
       </div>

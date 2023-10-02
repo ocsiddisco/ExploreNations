@@ -17,10 +17,6 @@ export default function Home() {
   const [continents, setContinents] = useState([]);
   const [state, setState] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
     try {
       const response = await fetch("https://restcountries.com/v3.1/all");
@@ -33,6 +29,10 @@ export default function Home() {
       console.log("Error fetching countries", error);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   // handle search per country
   const getCountries = () => {
@@ -154,7 +154,7 @@ export default function Home() {
         {state === "" && (
           <div className="container-countries-inside">
             {filteredOptions.map((option, i) => {
-              return <NewCard option={option} i={i} />;
+              return <NewCard option={option} i={i} key={i} />;
             })}
           </div>
         )}
@@ -164,7 +164,6 @@ export default function Home() {
         )}
         {state === "table" && <Table filteredOptions={filteredOptions} />}
       </div>
-
       <Footer />
     </>
   );

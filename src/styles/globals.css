@@ -217,6 +217,10 @@ margin-bottom:  30px;
   color:#f9dcd2
 }
 
+.MuiDataGrid-footerContainer {
+  color: #193d3d
+}
+
 .container-table {
   width:700px;
   margin-top: 20px;
