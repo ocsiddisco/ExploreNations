@@ -1,8 +1,4 @@
-import Tilt from "react-parallax-tilt";
-
 const NewCard = (props) => {
-  console.log("option", props.option);
-
   const country = props.option;
 
   let capital = "";
