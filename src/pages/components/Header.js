@@ -36,7 +36,7 @@ const Header = () => {
       </div>
       <div className="container-description">
         <p>
-          Explore the world through our country cards. Whether you're a travel
+          Explore the world through our country cards. Whether you are a travel
           enthusiast, or simply curious, our website has something for you.
           Discover the world, one card at a time, and expand your global
           knowledge.
