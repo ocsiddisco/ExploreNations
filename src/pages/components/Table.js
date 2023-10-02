@@ -75,7 +75,7 @@ export default function Table(props) {
   // }, [filteredOptions, checkData]);
 
   const populateTable = () => {
-    const updatedRows = filteredOptions.map((data, index) => {
+    const updatedRows = (filteredOptions || []).map((data, index) => {
       const { language, currencie } = checkData(data);
       return {
         id: index + 1,

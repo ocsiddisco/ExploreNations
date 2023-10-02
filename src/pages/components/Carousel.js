@@ -7,7 +7,7 @@ const Carousel = (props) => {
   const { filteredOptions } = props;
 
   const gatherContent = () => {
-    return filteredOptions.map((option, i) => (
+    return (filteredOptions || []).map((option, i) => (
       <SwiperSlide key={i}>
         <NewCard option={option} i={i} />
       </SwiperSlide>

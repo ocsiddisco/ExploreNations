@@ -153,7 +153,7 @@ export default function Home() {
         <div className="container-countries">
           {state === "list" && (
             <div className="container-countries-inside">
-              {filteredOptions.map((option, i) => {
+              {(filteredOptions || []).map((option, i) => {
                 return <NewCard option={option} i={i} key={i} />;
               })}
             </div>
