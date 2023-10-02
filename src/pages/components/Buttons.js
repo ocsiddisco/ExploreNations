@@ -6,7 +6,7 @@ const Buttons = ({ handleClickDisplay }) => {
       <div className="container-buttons">
         <p>Select a view</p>
         <span className="container-buttons-inside">
-          <button onClick={() => handleClickDisplay("")}>
+          <button onClick={() => handleClickDisplay("list")}>
             <Image src="/view.png" alt="view-card" width={50} height={50} />
           </button>
           <button onClick={() => handleClickDisplay("carousel")}>

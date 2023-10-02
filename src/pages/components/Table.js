@@ -57,28 +57,7 @@ export default function Table(props) {
     },
   ];
 
-  useEffect(() => {
-    const updatedRows = filteredOptions.map((data, index) => {
-      const { language, currencie } = checkData(data);
-      return {
-        id: index + 1,
-        continent: data.region,
-        country: data.name.common,
-        capital: data.capital,
-        population: data.population,
-        language: language,
-        currencie: currencie,
-      };
-    });
-
-    setRows(updatedRows);
-  }, [filteredOptions, checkData]);
-
   // useEffect(() => {
-  //   populateTable();
-  // }, [filteredOptions]);
-
-  // const populateTable = () => {
   //   const updatedRows = filteredOptions.map((data, index) => {
   //     const { language, currencie } = checkData(data);
   //     return {
@@ -93,7 +72,28 @@ export default function Table(props) {
   //   });
 
   //   setRows(updatedRows);
-  // };
+  // }, [filteredOptions, checkData]);
+
+  const populateTable = () => {
+    const updatedRows = filteredOptions.map((data, index) => {
+      const { language, currencie } = checkData(data);
+      return {
+        id: index + 1,
+        continent: data.region,
+        country: data.name.common,
+        capital: data.capital,
+        population: data.population,
+        language: language,
+        currencie: currencie,
+      };
+    });
+
+    setRows(updatedRows);
+  };
+
+  useEffect(() => {
+    populateTable();
+  }, [filteredOptions]);
 
   return (
     <>

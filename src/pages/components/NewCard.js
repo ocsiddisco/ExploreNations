@@ -11,9 +11,7 @@ const NewCard = (props) => {
     try {
       capital = country.capital;
       currencieName = Object.values(country.currencies)[0].name;
-      console.log(" currencieName", currencieName);
       currencieSymbol = Object.values(country.currencies)[0].symbol;
-      console.log(" currencieSymbol", currencieSymbol);
       languageMain = Object.values(country.languages)[0];
       return { capital, currencieName, currencieSymbol, languageMain };
     } catch (err) {

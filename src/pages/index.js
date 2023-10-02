@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import AsyncSelect from "react-select/async";
 import Header from "./components/Header";
 import NewCard from "./components/NewCard";
-import Carrousel from "./components/Carrousel";
+import Carousel from "./components/Carousel";
 import Table from "./components/Table";
 import Buttons from "./components/Buttons";
 import Footer from "./components/Footer";
@@ -15,7 +15,7 @@ export default function Home() {
   const [countries, setCountries] = useState([]);
   const [continentsList, setContinentsList] = useState([]);
   const [continents, setContinents] = useState([]);
-  const [state, setState] = useState("");
+  const [state, setState] = useState("list");
 
   const fetchData = async () => {
     try {
@@ -125,7 +125,6 @@ export default function Home() {
   const handleClickDisplay = (clickedIcon) => {
     setState(clickedIcon);
   };
-  console.log("filteredOptions", filteredOptions);
   return (
     <>
       <Header />
@@ -151,7 +150,7 @@ export default function Home() {
       </div>
       <Buttons handleClickDisplay={handleClickDisplay} />
       <div className="container-countries">
-        {state === "" && (
+        {state === "list" && filteredOptions !== null && (
           <div className="container-countries-inside">
             {filteredOptions.map((option, i) => {
               return <NewCard option={option} i={i} key={i} />;
@@ -159,10 +158,12 @@ export default function Home() {
           </div>
         )}
 
-        {state === "carousel" && (
-          <Carrousel filteredOptions={filteredOptions} />
+        {state === "carousel" && filteredOptions !== null && (
+          <Carousel filteredOptions={filteredOptions} />
         )}
-        {state === "table" && <Table filteredOptions={filteredOptions} />}
+        {state === "table" && filteredOptions !== null && (
+          <Table filteredOptions={filteredOptions} />
+        )}
       </div>
       <Footer />
     </>

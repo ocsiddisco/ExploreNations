@@ -1,12 +1,10 @@
-import NewCard from ".//NewCard";
+import NewCard from "./NewCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 const Carousel = (props) => {
-  console.log("props.filteredOptions", props.filteredOptions);
   const { filteredOptions } = props;
-  console.log("props filteredCountries", filteredOptions);
 
   const gatherContent = () => {
     return filteredOptions.map((option, i) => (
