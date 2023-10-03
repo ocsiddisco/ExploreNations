@@ -1,6 +1,12 @@
-## ExploreNations - under construction
+<h1 align='center'> <img src="public/favicon.ico">
+ExploreNations <img src="public/favicon.ico">
+</h1>
 
-First, run the development server:
+## Objectives
+
+Exploring various methods of card display using libraries and styling for their components
+
+## Command
 
 ```bash
 npm run dev
