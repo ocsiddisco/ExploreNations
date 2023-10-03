@@ -1,12 +1,12 @@
 import { Inter } from "next/font/google";
 import { useEffect, useMemo, useState } from "react";
 import AsyncSelect from "react-select/async";
-import Header from "./components/Header";
-import NewCard from "./components/NewCard";
-import Carousel from "./components/Carousel";
-import Table from "./components/Table";
-import Buttons from "./components/Buttons";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import NewCard from "../components/NewCard";
+import Carousel from "../components/Carousel";
+import Table from "../components/Table";
+import Buttons from "../components/Buttons";
+import Footer from "../components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
