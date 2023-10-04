@@ -21,7 +21,6 @@ export default function Home() {
     try {
       const response = await fetch("https://restcountries.com/v3.1/all");
       const data = await response.json();
-      console.log("data", data);
       setAllData(data);
       getCountries(data);
       getContinents(data);
@@ -37,10 +36,7 @@ export default function Home() {
   // handle search per country
   const getCountries = () => {
     const list = [];
-    console.log("continents get countries", continents);
     if (continents.length === 0) {
-      console.log("start here");
-
       allData.forEach((country) =>
         list.push({
           value: country.name.common,
@@ -48,7 +44,6 @@ export default function Home() {
         })
       );
     } else {
-      console.log("then goes here");
       const filteredCountries = allData.filter((country) =>
         continents.some(
           (continent) => continent.value === country.continents[0]
@@ -66,7 +61,6 @@ export default function Home() {
   };
 
   function handleSelectedCountries(selected) {
-    console.log("selected", selected);
     setCountries(selected);
   }
 
@@ -89,7 +83,6 @@ export default function Home() {
 
   // select a continent will reduce the list of countries in the search bar country
   function handleSelectedContinents(selected) {
-    console.log("selected", selected);
     setContinents(selected);
   }
 
@@ -103,10 +96,6 @@ export default function Home() {
     getCountries();
     const filteredCountries = countries.map((option) => option.value);
     const filteredContinents = continents.map((option) => option.value);
-    console.log({
-      filteredCountries: filteredCountries,
-      filteredContinents: filteredContinents,
-    });
 
     if (filteredContinents.length === 0) {
       // If no continents are selected, return all countries
