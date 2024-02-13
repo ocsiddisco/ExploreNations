@@ -17,3 +17,8 @@ npm run dev
 - Next.js
 - Mui Library
 - Rest API
+
+## Take a peek
+
+![explorenation](https://github.com/ocsiddisco/ExploreNations/assets/114222588/e7111f74-7360-4706-b25d-9f35c7d9013e)
+
